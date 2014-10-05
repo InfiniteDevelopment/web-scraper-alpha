@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'debug' => false,
+	'debug' => true,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -122,7 +122,11 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
-	),
+        'Elvedia\Goutte\Providers\GoutteServiceProvider',
+        'Way\Generators\GeneratorsServiceProvider',
+
+
+    ),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -188,6 +192,8 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
+
+        'Goutte'          => 'Elvedia\Goutte\Facades\GoutteFacade',
 
 	),
 

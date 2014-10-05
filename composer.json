@@ -3,15 +3,10 @@
 	"description": "Web scraper built on laravel 4.2 and Goutte",
 	"keywords": ["framework", "laravel", "web-scrapper", "goutte", "spiders"],
 	"license": "MIT",
-    "repositories": [
-        {
-            "url": "https://github.com/pelletiermaxime/laravel4-goutte.git",
-            "type": "git"
-        }
-    ],
 	"require": {
 		"laravel/framework": "4.2.*",
-        "elvedia/goutte": "1.0.*"
+        "elvedia/goutte": "dev-master",
+        "way/generators": "~2.0"
 	},
 	"autoload": {
 		"classmap": [
