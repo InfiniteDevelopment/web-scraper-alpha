@@ -3,6 +3,10 @@
 /**
  * Class TvSlot
  * @package App\Models
+ * @author Milan Batica
+ *
+ * Model representing tv_slot database table
+ *
  */
 class TvSlot extends \Eloquent {
 
