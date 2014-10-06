@@ -15,7 +15,7 @@ class CreateTvProgramDataTable extends Migration {
 		Schema::create('tv_program_data', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('time');
+			$table->string('air_time');
 			$table->string('title');
 			$table->timestamps();
 		});

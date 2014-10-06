@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\TvData;
 use Elvedia\Goutte\Goutte;
 
 Route::get('/', function () {
@@ -8,19 +9,34 @@ Route::get('/', function () {
 
     $crawler = $client->request('GET', 'http://tv.aladin.info/tv-program-rts-1');
 
-    $tvData = new TvData;
+    $niz = array();
 
     $crawler->filter('tbody>tr>td')->each(function ($node, $counter = 1) {
 
-        global $tvData;
+        global $niz;
 
         if ($counter % 2 == 0) {
-            $tvData->time = $node->text();
+            $niz[0] = $node->text();
+            //$tvData->air_time = $node->text();
         } else {
-            $tvData->name = $node->text();
+            $niz[1] = $node->text();
+            //$tvData->name = $node->text();
+            //$tvData->save();
+            //var_dump($tvData);
+            //var_dump($niz);
+
+            $tvData = new TvData();
+
+            $tvData->air_time = $niz[0];
+            $tvData->title = $niz[1];
+
             $tvData->save();
+
             var_dump($tvData);
+
+            $niz = ["",""];
         }
+
         $counter++;
     });
 });
