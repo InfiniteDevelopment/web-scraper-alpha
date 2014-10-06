@@ -1,5 +1,9 @@
 <?php namespace App\Models;
 
+/**
+ * Class TvSlot
+ * @package App\Models
+ */
 class TvSlot extends \Eloquent {
 
     protected $table = "tv_slots";

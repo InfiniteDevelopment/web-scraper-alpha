@@ -27,7 +27,7 @@ Route::get('/', function () {
 
             //$tvSlot->save();
 
-            var_dump($tvSlot);
+            var_dump($niz);
 
             $niz = ["",""];
         }
