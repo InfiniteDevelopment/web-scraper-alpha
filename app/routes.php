@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\TvData;
+use App\Models\TvSlot;
 use Elvedia\Goutte\Goutte;
 
 Route::get('/', function () {
@@ -17,22 +17,17 @@ Route::get('/', function () {
 
         if ($counter % 2 == 0) {
             $niz[0] = $node->text();
-            //$tvData->air_time = $node->text();
         } else {
             $niz[1] = $node->text();
-            //$tvData->name = $node->text();
-            //$tvData->save();
-            //var_dump($tvData);
-            //var_dump($niz);
 
-            $tvData = new TvData();
+            $tvSlot = new TvSlot();
 
-            $tvData->air_time = $niz[0];
-            $tvData->title = $niz[1];
+            $tvSlot->air_time = $niz[0];
+            $tvSlot->title = $niz[1];
 
-            $tvData->save();
+            //$tvSlot->save();
 
-            var_dump($tvData);
+            var_dump($tvSlot);
 
             $niz = ["",""];
         }

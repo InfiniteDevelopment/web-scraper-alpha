@@ -16,6 +16,7 @@ class CreateTvStationTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('tv_station_name');
+            $table->string('url');
 			$table->timestamps();
 		});
 	}
