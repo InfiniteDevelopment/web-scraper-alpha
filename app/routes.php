@@ -3,6 +3,24 @@
 use App\Models\TvSlot;
 use Elvedia\Goutte\Goutte;
 
+
+/**
+ * Development log
+ *
+ * TODO:    Implement Repository pattern
+ *          Read more on http://heera.it/laravel-repository-pattern#.VDQ7wvmSzPE
+ *
+ *
+ */
+
+
+Route::group(array('prefix' => 'admin'), function() {
+
+    Route::get('',      array('as' => 'admin.index', 'uses' => 'App\Controllers\Backend\IndexController@getIndex'));
+
+});
+
+
 Route::get('/', function () {
 
     $client = Goutte::getNewClient();
