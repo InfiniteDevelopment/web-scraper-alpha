@@ -7,8 +7,8 @@ use Elvedia\Goutte\Goutte;
 /**
  * Development log
  *
- * TODO:    Implement Repository pattern
- *          Read more on http://heera.it/laravel-repository-pattern#.VDQ7wvmSzPE
+ * TODO:    Find solution for model relationship
+            It should be TvStation->hasMany(TvSlot)
  *
  *
  */

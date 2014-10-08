@@ -35,6 +35,15 @@ web-scraper-alpha
         </fieldset>
     </form>
 </div>
+<div>
+    @foreach ($tvStationList as $tvStation)
+        {{ $tvStation->tv_station_name }}
+    <br/>
+        @foreach($tvStation->tvSlots() as $tvSlot)
+            {{ $tvSlot->title }}
+        @endforeach
+    @endforeach
+</div>
 @stop
 
 @section('javascript')

@@ -93,7 +93,7 @@ return array(
 	|
 	*/
 
-	'providers' => array(
+	'providers' => [
 
 		'Illuminate\Foundation\Providers\ArtisanServiceProvider',
 		'Illuminate\Auth\AuthServiceProvider',
@@ -122,11 +122,13 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
+        'App\Repository\Backend\TvStationServiceProvider',
+
         'Elvedia\Goutte\Providers\GoutteServiceProvider',
         'Way\Generators\GeneratorsServiceProvider',
 
 
-    ),
+    ],
 
 	/*
 	|--------------------------------------------------------------------------

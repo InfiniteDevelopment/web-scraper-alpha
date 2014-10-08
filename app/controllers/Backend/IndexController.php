@@ -1,5 +1,6 @@
 <?php namespace App\Controllers\Backend;
 
+use App\Repository\Backend\ITvStationRepository;
 use Illuminate\Support\Facades\View;
 
 /**
@@ -13,6 +14,13 @@ use Illuminate\Support\Facades\View;
  */
 class IndexController extends \BaseController
 {
+
+    public function __construct(ITvStationRepository $tvStationRepository)
+    {
+        $this->tvStation = $tvStationRepository;
+    }
+
+
     /**
      * @return View
      *
@@ -22,7 +30,8 @@ class IndexController extends \BaseController
      */
     public function getIndex()
     {
-        return View::make('backend.index.index');
+        return View::make('backend.index.index')
+                        ->with('tvStationList', $this->tvStation->getTvStationList());
     }
 
 

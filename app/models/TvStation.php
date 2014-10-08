@@ -24,6 +24,6 @@ class TvStation extends \Eloquent
      */
     public function tvSlots()
     {
-        return $this->hasMany('TvSlot');
+        return $this->hasMany('App\Models\TvSlot');
     }
 }
