@@ -25,5 +25,16 @@ class TvStationRepository implements ITvStationRepository
     {
         return $this->tvStation->all();
     }
+
+    /**
+     * @param TvStation $station
+     * @return mixed
+     *
+     * Handles saving TvStation model to database
+     */
+    public function createTvStation(TvStation $station)
+    {
+        return TvStation::create($station);
+    }
 }
 
