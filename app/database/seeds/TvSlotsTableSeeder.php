@@ -1,20 +1,17 @@
 <?php
 
-// Composer: "fzaninotto/faker": "v1.3.0"
-use Faker\Factory as Faker;
-
 class TvSlotsTableSeeder extends Seeder {
 
 	public function run()
 	{
-		$faker = Faker::create();
 
-		foreach(range(1, 10) as $index)
-		{
-			TvSlot::create([
+        /**
+         * Clear tv_slot database table
+         */
 
-			]);
-		}
+        DB::table('tv_slot')->delete();
+
+
 	}
 
 }

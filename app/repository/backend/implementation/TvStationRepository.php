@@ -34,7 +34,7 @@ class TvStationRepository implements ITvStationRepository
      */
     public function createTvStation(TvStation $station)
     {
-        return TvStation::create($station);
+        return $station->save();
     }
 }
 

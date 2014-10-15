@@ -1,26 +1,40 @@
 <?php
 
+use App\Repository\Backend\ITvStationRepository as ITvStationRepository;
 use App\Models\TvStation as TvStation;
 
 class TvStationsTableSeeder extends Seeder
 {
 
+    /**
+     * @param ITvStationRepository $tvStationRepository
+     *
+     * Inject tvStationRepository in seeder class
+     */
+    public function __construct(ITvStationRepository $tvStationRepository)
+    {
+        $this->tvStation = $tvStationRepository;
+    }
+
     public function run()
     {
+
+        /**
+         * Clear tv_stations database table
+         */
         DB::table('tv_station')->delete();
-        DB::table('tv_slot')->delete();
 
-        $tvStation = new TvStation();
-        $tvStation->tv_station_name = 'RTS1';
-        $tvStation->url = 'http://tv.aladin.info/tv-program-rts-1';
+        $tvStationTemp = new TvStation();
+        $tvStationTemp->tv_station_name = 'RTS1';
+        $tvStationTemp->url = 'http://tv.aladin.info/tv-program-rts-1';
 
-        $tvStation->save();
+        $this->tvStation->createTvStation($tvStationTemp);
 
-        $tvStation = new TvStation();
-        $tvStation->tv_station_name = 'RTS2';
-        $tvStation->url = 'http://tv.aladin.info/tv-program-rts-2';
+        $tvStationTemp = new TvStation();
+        $tvStationTemp->tv_station_name = 'RTS2';
+        $tvStationTemp->url = 'http://tv.aladin.info/tv-program-rts-2';
 
-        $tvStation->save();
+        $this->tvStation->createTvStation($tvStationTemp);
 
     }
 
