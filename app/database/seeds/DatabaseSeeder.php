@@ -11,6 +11,9 @@ class DatabaseSeeder extends Seeder {
 	{
         $this->call('TvStationsTableSeeder');
         $this->command->info('Tv station table successfully seeded!');
+
+        $this->call('TvSlotsTableSeeder');
+        $this->command->info('Tv slot table successfully seeded!');
 	}
 
 }

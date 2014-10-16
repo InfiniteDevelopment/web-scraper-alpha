@@ -12,7 +12,7 @@
 class TvSlot extends \Eloquent
 {
 
-    protected $table = "tv_slots";
+    protected $table = "tv_slot";
 
     protected $fillable = ['air_time', 'title', 'tv_station_id'];
 
