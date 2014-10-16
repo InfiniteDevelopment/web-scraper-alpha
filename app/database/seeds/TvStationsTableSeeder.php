@@ -6,16 +6,6 @@ use App\Models\TvStation as TvStation;
 class TvStationsTableSeeder extends Seeder
 {
 
-    /**
-     * @param ITvStationRepository $tvStationRepository
-     *
-     * Inject tvStationRepository in seeder class
-     */
-    public function __construct(ITvStationRepository $tvStationRepository)
-    {
-        $this->tvStation = $tvStationRepository;
-    }
-
     public function run()
     {
 
@@ -24,17 +14,17 @@ class TvStationsTableSeeder extends Seeder
          */
         DB::table('tv_station')->delete();
 
-        $tvStationTemp = new TvStation();
-        $tvStationTemp->tv_station_name = 'RTS1';
-        $tvStationTemp->url = 'http://tv.aladin.info/tv-program-rts-1';
+        $tvStationSeed = new TvStation();
+        $tvStationSeed->tv_station_name = 'RTS1';
+        $tvStationSeed->url = 'http://tv.aladin.info/tv-program-rts-1';
 
-        $this->tvStation->createTvStation($tvStationTemp);
+        $tvStationSeed->save();
 
-        $tvStationTemp = new TvStation();
-        $tvStationTemp->tv_station_name = 'RTS2';
-        $tvStationTemp->url = 'http://tv.aladin.info/tv-program-rts-2';
+        $tvStationSeed = new TvStation();
+        $tvStationSeed->tv_station_name = 'RTS2';
+        $tvStationSeed->url = 'http://tv.aladin.info/tv-program-rts-2';
 
-        $this->tvStation->createTvStation($tvStationTemp);
+        $tvStationSeed->save();
 
     }
 

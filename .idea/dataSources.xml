@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="2610909104">
+  <component name="DataSourceManagerImpl" format="xml" hash="410072286">
     <data-source source="LOCAL" name="SQLite-web-scraper-alpha" uuid="35955906-784b-41d7-bbd9-1dd96b300eca">
       <driver-ref>sqlite.zentus</driver-ref>
       <synchronize>true</synchronize>
