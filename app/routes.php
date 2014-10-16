@@ -16,7 +16,7 @@ use Elvedia\Goutte\Goutte;
 
 Route::group(array('prefix' => 'admin'), function() {
 
-    Route::get('',      array('as' => 'admin.index', 'uses' => 'App\Controllers\Backend\IndexController@getIndex'));
+    Route::get('',      array('as' => 'admin.index', 'uses' => 'App\Controllers\Ui\UiBaseController@showHome'));
 
 });
 

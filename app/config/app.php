@@ -122,7 +122,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
-        'App\Repository\Backend\TvStationServiceProvider',
+        'App\Repositories\ServiceProviders\RepositoryServiceProvider',
 
         'Elvedia\Goutte\Providers\GoutteServiceProvider',
         'Way\Generators\GeneratorsServiceProvider',
