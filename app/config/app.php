@@ -123,6 +123,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
         'App\Repositories\ServiceProviders\RepositoryServiceProvider',
+        'App\Services\ServiceProviders\ScraperServiceProvider',
 
         'Elvedia\Goutte\Providers\GoutteServiceProvider',
         'Way\Generators\GeneratorsServiceProvider',

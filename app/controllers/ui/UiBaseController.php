@@ -1,6 +1,7 @@
 <?php namespace App\Controllers\Ui;
 
 use App\Repositories\TvStationRepositoryInterface;
+use App\Services\ScraperServiceInterface;
 use Illuminate\Support\Facades\View;
 
 /**
@@ -11,9 +12,11 @@ use Illuminate\Support\Facades\View;
  */
 class UiBaseController extends \BaseController
 {
-    function __construct(TvStationRepositoryInterface $tvStationRepository)
+    function __construct(TvStationRepositoryInterface $tvStationRepository,
+                         ScraperServiceInterface $scraperService)
     {
-        $this->TvStationRepository = $tvStationRepository;
+        $this->tvStationRepository = $tvStationRepository;
+        $this->scraperService = $scraperService;
     }
 
     /**
@@ -22,7 +25,12 @@ class UiBaseController extends \BaseController
     public function showHome()
     {
         return View::make('ui.page.index')
-            ->with('tvStations', $this->TvStationRepository->getAll());
+            ->with('tvStations', $this->tvStationRepository->getAll());
+    }
+
+    public function fetch()
+    {
+        $this->scraperService->scrape($this->tvStationRepository->findById(1));
     }
 
 }

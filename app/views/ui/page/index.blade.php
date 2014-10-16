@@ -35,12 +35,14 @@ web-scraper-alpha
         </fieldset>
     </form>
 </div>
-<div>
+<div class="col-lg-12">
     @foreach($tvStations as $tvStation)
-        {{ $tvStation->tv_station_name }}
+        <h4>{{ $tvStation->tv_station_name }}</h4>
+        <br/>
         @foreach($tvStation->tvSlots as $tvSlot)
             {{$tvSlot->title}}
         @endforeach
+        <br/>
     @endforeach
 </div>
 @stop
