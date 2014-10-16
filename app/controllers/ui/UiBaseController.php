@@ -16,9 +16,13 @@ class UiBaseController extends \BaseController
         $this->TvStationRepository = $tvStationRepository;
     }
 
+    /**
+     * @return mixed Show page populated with all tv stations
+     */
     public function showHome()
     {
-        return View::make('ui.page.index');
+        return View::make('ui.page.index')
+            ->with('tvStations', $this->TvStationRepository->getAll());
     }
 
 }

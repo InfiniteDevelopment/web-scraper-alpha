@@ -36,6 +36,12 @@ web-scraper-alpha
     </form>
 </div>
 <div>
+    @foreach($tvStations as $tvStation)
+        {{ $tvStation->tv_station_name }}
+        @foreach($tvStation->tvSlots as $tvSlot)
+            {{$tvSlot->title}}
+        @endforeach
+    @endforeach
 </div>
 @stop
 
