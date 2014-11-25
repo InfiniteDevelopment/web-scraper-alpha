@@ -2,7 +2,7 @@
 
 use App\Models\TvStation as TvStation;
 
-class TvStationRepositoryImplementation implements TvStationRepositoryInterface
+class TvStationRepositoryImplementation implements TvStationRepository
 {
     /**
      * @return array of all entities from selected database

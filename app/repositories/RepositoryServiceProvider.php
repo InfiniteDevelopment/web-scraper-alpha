@@ -21,14 +21,14 @@ class RepositoryServiceProvider extends ServiceProvider
         /**
          * TvStation service registration
          */
-        $this->app->bind('App\Repositories\TvStationRepositoryInterface',
+        $this->app->bind('App\Repositories\TvStationRepository',
             'App\Repositories\TvStationRepositoryImplementation');
 
         /**
          * TvSlot service registration
          */
-        $this->app->bind('App\Repositories\TvSlotRepositoryInterface',
-            'App\Repositories\TvSlotRepositoryImplementationss');
+        $this->app->bind('App\Repositories\TvSlotRepository',
+            'App\Repositories\TvSlotRepositoryImplementation');
     }
 
 }

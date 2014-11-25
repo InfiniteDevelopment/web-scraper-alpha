@@ -6,7 +6,7 @@
  *
  * Interface containing generic methods for other interfaces/repositories
  */
-interface GenericRepositoryInterface
+interface GenericRepository
 {
     /**
      * @return array of all entities from selected database

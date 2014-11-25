@@ -1,7 +1,8 @@
 <?php namespace App\Controllers\Ui;
 
-use App\Repositories\TvStationRepositoryInterface;
-use App\Services\ScraperServiceInterface;
+use App\Repositories\TvSlotRepository;
+use App\Repositories\TvStationRepository;
+use App\Services\ScraperService;
 use Illuminate\Support\Facades\View;
 
 /**
@@ -12,10 +13,12 @@ use Illuminate\Support\Facades\View;
  */
 class UiBaseController extends \BaseController
 {
-    function __construct(TvStationRepositoryInterface $tvStationRepository,
-                         ScraperServiceInterface $scraperService)
+    function __construct(TvStationRepository $tvStationRepository,
+                         TvSlotRepository $tvSlotRepositoryInterface,
+                         ScraperService $scraperService)
     {
         $this->tvStationRepository = $tvStationRepository;
+        $this->tvSlotRepository = $tvSlotRepositoryInterface;
         $this->scraperService = $scraperService;
     }
 
@@ -28,9 +31,18 @@ class UiBaseController extends \BaseController
             ->with('tvStations', $this->tvStationRepository->getAll());
     }
 
+    /**
+     * @return Object
+     * Find TvSlot by id
+     */
     public function fetch()
     {
         $this->scraperService->scrape($this->tvStationRepository->findById(1));
+    }
+
+    public function deleteTvSlotByDate()
+    {
+        $this->tvSlotRepository->deleteSlotsByDate(date('Y-m-d'),1);
     }
 
 }

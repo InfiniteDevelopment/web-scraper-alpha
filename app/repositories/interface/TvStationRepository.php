@@ -1,6 +1,6 @@
 <?php namespace App\Repositories;
 
-interface TvStationRepositoryInterface extends GenericRepositoryInterface
+interface TvStationRepository extends GenericRepository
 {
 
     /**

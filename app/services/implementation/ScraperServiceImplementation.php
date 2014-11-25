@@ -1,10 +1,10 @@
 <?php namespace App\Services;
 
 use App\Models\TvSlot;
-use App\Repositories\TvSlotRepositoryInterface;
+use App\Repositories\TvSlotRepository;
 use Elvedia\Goutte\Goutte;
 
-class ScraperServiceImplementation implements ScraperServiceInterface
+class ScraperServiceImplementation implements ScraperService
 {
     function __construct()
     {

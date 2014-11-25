@@ -9,7 +9,7 @@
  * @author Milan Batica
  *
  */
-class TvSlot extends \Eloquent
+class TvSlot extends AbstractModel
 {
 
     protected $table = "tv_slot";

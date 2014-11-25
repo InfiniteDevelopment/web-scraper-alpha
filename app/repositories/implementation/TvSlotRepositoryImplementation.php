@@ -1,9 +1,10 @@
 <?php namespace App\Repositories;
 
 use App\Models\TvSlot as TvSlot;
-use App\Models\TvStation;
+use App\Models\TvStation as TvStation;
+use \DB as DB;
 
-class TvSlotRepositoryImplementation implements TvSlotRepositoryInterface
+class TvSlotRepositoryImplementation implements TvSlotRepository
 {
     /**
      * @return array of all entities from selected database
@@ -31,5 +32,17 @@ class TvSlotRepositoryImplementation implements TvSlotRepositoryInterface
         // TODO: Implement findByTvStation() method.
     }
 
-
+    /**
+     * @param $deleteDate
+     * @param $tvStationId
+     * @return void
+     *
+     * Delete all TvSlots for selected TvStation and for provided date
+     */
+    public function deleteSlotsByDate($deleteDate, $tvStationId)
+    {
+        DB::table('tv_slot')->where('tv_station_id', '=', $tvStationId)
+                            ->where('created_at', 'LIKE', $deleteDate)
+                            ->delete();
+    }
 }

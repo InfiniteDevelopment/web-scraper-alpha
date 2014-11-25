@@ -21,7 +21,7 @@ class ScraperServiceProvider extends ServiceProvider
         /**
          * Scraper service registration
          */
-        $this->app->bind('App\Services\ScraperServiceInterface',
+        $this->app->bind('App\Services\ScraperService',
             'App\Services\ScraperServiceImplementation');
 
     }

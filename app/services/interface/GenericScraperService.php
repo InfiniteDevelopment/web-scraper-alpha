@@ -7,7 +7,7 @@
  * Contains generic methods related to web scraping
  *
  */
-interface GenericScraperServiceInterface
+interface GenericScraperService
 {
 
     /**

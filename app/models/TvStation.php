@@ -9,7 +9,7 @@
  * @author Milan Batica
  *
  */
-class TvStation extends \Eloquent
+class TvStation extends AbstractModel
 {
     protected $table = 'tv_station';
 
