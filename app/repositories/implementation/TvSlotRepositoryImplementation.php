@@ -41,6 +41,9 @@ class TvSlotRepositoryImplementation implements TvSlotRepository
      */
     public function deleteSlotsByDate($deleteDate, $tvStationId)
     {
+
+
+
         DB::table('tv_slot')->where('tv_station_id', '=', $tvStationId)
                             ->where('created_at', 'LIKE', $deleteDate)
                             ->delete();

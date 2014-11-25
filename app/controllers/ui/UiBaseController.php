@@ -3,6 +3,7 @@
 use App\Repositories\TvSlotRepository;
 use App\Repositories\TvStationRepository;
 use App\Services\ScraperService;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\View;
 
 /**
@@ -20,6 +21,15 @@ class UiBaseController extends \BaseController
         $this->tvStationRepository = $tvStationRepository;
         $this->tvSlotRepository = $tvSlotRepositoryInterface;
         $this->scraperService = $scraperService;
+    }
+
+    /**
+     * Method used for testing logging levels
+     * TODO: get rid of this when no longer needed
+     */
+    public function loggerInfoTesting()
+    {
+        Log::info('Testing log::info');
     }
 
     /**
@@ -42,7 +52,7 @@ class UiBaseController extends \BaseController
 
     public function deleteTvSlotByDate()
     {
-        $this->tvSlotRepository->deleteSlotsByDate(date('Y-m-d'),1);
+        $this->tvSlotRepository->deleteSlotsByDate(date('Y-m-d'), 1);
     }
 
 }
